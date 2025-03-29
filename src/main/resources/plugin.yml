@@ -1,0 +1,18 @@
+name: NeoTccTools
+version: '${version}'
+main: tcc.youajing.tcctools.TccTools
+api-version: '1.20'
+load: POSTWORLD
+authors: [ YouaJing ]
+folia-supported: true
+soft-depend: [PlaceholderAPI]
+depend: [ProtocolLib]
+commands:
+  tools:
+    description: tools Command.
+    usage: /tools ...
+    default: true
+  welcome:
+    description: Welcome a Player.
+    usage: /welcome ...
+    default: true

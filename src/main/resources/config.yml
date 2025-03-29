@@ -1,0 +1,10 @@
+WitherSoundRange: 128         #凋灵生成声音半径
+EnderDragonSoundRange: 512    #末影龙死亡声音半径
+db_host: '127.0.0.1'
+db_port: 3377
+db_user: "neotcc"
+db_passwd: "TccServer2024@"
+db_database: "neotcc_tools"
+server_ip: "127.0.0.1"
+rcon_port: 25575
+rcon_password: "abc"
