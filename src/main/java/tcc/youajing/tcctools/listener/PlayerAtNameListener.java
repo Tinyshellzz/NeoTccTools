@@ -10,7 +10,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import java.util.Collection;
 
-public class PlayerAtNameColorListener implements Listener {
+public class PlayerAtNameListener implements Listener {
     /**
      * @+ID 加粗，并向玩家发送音效通知
      * @param event
@@ -20,8 +20,12 @@ public class PlayerAtNameColorListener implements Listener {
         String message = event.getMessage();
         Collection<? extends Player> onlinePlayers = Bukkit.getServer().getOnlinePlayers();
         for (Player p : onlinePlayers) {
-            message = message.replace('@'+p.getName(), ChatColor.GREEN + "@" + ChatColor.BOLD  + p.getName() + ChatColor.RESET);
-            p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_WORK_TOOLSMITH, 1f, 1f);
+            int i = message.toLowerCase().indexOf('@'+p.getName().toLowerCase());
+            if(i != -1) {
+                message = message.substring(0, i) + ChatColor.GREEN + ChatColor.BOLD + message.substring(i, i+1+p.getName().length()) + ChatColor.GRAY + message.substring(i+1+p.getName().length());
+                p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+
+            }
         }
 
         event.setMessage(message);

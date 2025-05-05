@@ -58,6 +58,7 @@ public class TccTools extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new EntityDeathListener(), this);
         this.getServer().getPluginManager().registerEvents(new EntityDamageByEntityListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerStatisticsListener(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerAtNameListener(), this);
 
         // 注册命令
         this.getCommand("tools").setExecutor(new ToolsCommand());
