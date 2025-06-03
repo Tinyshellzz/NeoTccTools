@@ -67,7 +67,7 @@ public class TccTools extends JavaPlugin {
         // 注册 PlaceHolder
         if (this.getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new TccToolsExpansion(this).register();
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_AQUA + "[TccTools]" + ChatColor.GREEN + "PlaceholderAPI 准备就绪");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_AQUA + "[TccTools]" + ChatColor.GREEN + "PlaceholderAPI 准备就绪！");
         }
     }
 
