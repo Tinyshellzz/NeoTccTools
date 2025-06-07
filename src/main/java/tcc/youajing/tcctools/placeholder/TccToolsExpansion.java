@@ -40,7 +40,7 @@ public class TccToolsExpansion extends PlaceholderExpansion {
     public String onPlaceholderRequest(Player player, @NotNull String identifier) {
 
         if (identifier.equals("debris")) {
-            if (player == null) return null2
+            if (player == null) return null;
             return "" + MCPlayerManager.getDebrisMined(player.getUniqueId());
         } else if (identifier.equals("fish")) {
             if (player == null) return null;

@@ -14,6 +14,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import tcc.youajing.tcctools.TccTools;
+import tcc.youajing.tcctools.config.PluginConfig;
 
 import java.util.Random;
 
@@ -42,7 +43,7 @@ public class PlayerJoinListener implements Listener {
             // 发送欢迎消息给所有在线玩家
             Bukkit.getOnlinePlayers().forEach(onlinePlayer -> onlinePlayer.sendMessage(welcomeMessage));
 
-            TextComponent msg2 = new TextComponent(ChatColor.GREEN + ">>点击欢迎玩新家<<" + player.getName());
+            TextComponent msg2 = new TextComponent(ChatColor.GREEN + PluginConfig.trigger_welcome_message.replaceAll("%name%", player.getName()));
             msg2.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/welcome " + player.getName()));
             // 发送欢迎消息给所有在线玩家
             Bukkit.getOnlinePlayers().forEach(onlinePlayer -> onlinePlayer.sendMessage(msg2));

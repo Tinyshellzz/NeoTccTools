@@ -12,6 +12,7 @@ public class PluginConfig {
     public static boolean debug = false;
     public static int WitherSoundRange = 128;
     public static int EnderDragonSoundRange = 128;
+    public static String trigger_welcome_message = "";
     private static final ConfigWrapper configWrapper = new ConfigWrapper(plugin, "config.yml");
     public static String db_host;
     public static int db_port;
@@ -30,6 +31,7 @@ public class PluginConfig {
         debug = yamlconfig.getBoolean("debug");
         WitherSoundRange = yamlconfig.getInt("WitherSoundRange");
         EnderDragonSoundRange = yamlconfig.getInt("EnderDragonSoundRange");
+        trigger_welcome_message = yamlconfig.getString("trigger_welcome_message");
         db_host = yamlconfig.getString("db_host");
         db_port = yamlconfig.getInt("db_port");
         db_user = yamlconfig.getString("db_user");

@@ -1,5 +1,6 @@
 WitherSoundRange: 128         #凋灵生成声音半径
 EnderDragonSoundRange: 512    #末影龙死亡声音半径
+trigger_welcome_message: ">>点击欢迎新玩家 %name%<<"
 db_host: '127.0.0.1'
 db_port: 3306
 db_user: "root"
