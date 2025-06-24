@@ -7,7 +7,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.jetbrains.annotations.NotNull;
 import tcc.youajing.tcctools.config.PluginConfig;
-import tcc.youajing.tcctools.utils.Rcon.RconClient;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,19 +41,6 @@ public class ToolsCommandService {
         } else {
             Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "该玩家不存在！");
         }
-
-        return true;
-    }
-
-    public boolean stop(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
-        Matcher _m = Pattern.compile("^.*CraftRemoteConsoleCommandSender.*$").matcher(sender.toString());
-        if(!(sender instanceof ConsoleCommandSender || _m.find() || sender.isOp())){
-            sender.sendMessage("只有控制台和op才能使用该命令");
-            return true;
-        }
-
-        RconClient rconClient = new RconClient(PluginConfig.server_ip, PluginConfig.rcon_port, PluginConfig.rcon_password);
-        rconClient.sendRconCommand("kick tinyshellzzz");
 
         return true;
     }

@@ -6,6 +6,7 @@ db_port: 3306
 db_user: "root"
 db_passwd: "TccServer2024@"
 db_database: "neotcc_tools"
-server_ip: "127.0.0.1"
-rcon_port: 25575
-rcon_password: "abc"
+# 使用tpa命令所需的游玩时间
+tpa_play_time_requirement: 12
+# 新玩家可以使用back的时间
+back_play_time_for_new_players: 12

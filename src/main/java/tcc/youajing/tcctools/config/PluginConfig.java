@@ -19,9 +19,8 @@ public class PluginConfig {
     public static String db_user;
     public static String db_passwd;
     public static String db_database;
-    public static String server_ip;
-    public static int rcon_port;
-    public static String rcon_password;
+    public static double tpa_play_time_requirement;
+    public static double back_play_time_for_new_players;
 
 
     public static void reload() {
@@ -37,9 +36,8 @@ public class PluginConfig {
         db_user = yamlconfig.getString("db_user");
         db_passwd = yamlconfig.getString("db_passwd");
         db_database = yamlconfig.getString("db_database");
-        server_ip = yamlconfig.getString("server_ip");
-        rcon_port = yamlconfig.getInt("rcon_port");
-        rcon_password = yamlconfig.getString("rcon_password");
+        tpa_play_time_requirement = yamlconfig.getDouble("tpa_play_time_requirement");
+        back_play_time_for_new_players = yamlconfig.getDouble("back_play_time_for_new_players");
     }
 
     @Override

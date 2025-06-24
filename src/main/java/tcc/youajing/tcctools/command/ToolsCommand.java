@@ -32,10 +32,7 @@ public class ToolsCommand implements TabExecutor {
             return toolsCommandService.debris(commandSender, command, s, args);
         } else if (subcommand.equals("fish")) {
             return toolsCommandService.fish(commandSender, command, s, args);
-        } else if (subcommand.equals("stop")) {
-            return toolsCommandService.stop(commandSender, command, s, args);
         }
-
         return false;
     }
 
