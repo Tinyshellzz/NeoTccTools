@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.UUID;
 
 import static tcc.youajing.tcctools.ObjectPool.gson;
@@ -171,6 +172,33 @@ public class MCPlayerMapper {
                 }
             }
         }
+    }
+
+    public ArrayList<MCPlayer> getPlayers() {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        ArrayList<MCPlayer> players = new ArrayList<>();
+        try {
+            conn = MysqlConfig.connect();
+            conn.commit();
+            stmt = conn.prepareStatement("SELECT * FROM mc_players");
+            rs = stmt.executeQuery();
+            while(rs.next()) {
+                players.add(new MCPlayer(rs.getString(1), UUID.fromString(rs.getString(2)), rs.getInt(3), rs.getInt(4)));
+            }
+        } catch (SQLException e) {
+            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "MCPlayerMapper.get_user_by_uuid:" + e.getMessage());
+        } finally {
+            try {
+                if(stmt != null) stmt.close();
+                if(rs != null) rs.close();
+                if(conn != null) conn.close();
+            } catch (SQLException e) {
+            }
+        }
+
+        return players;
     }
 
     public void add_fished_times(Player player, int fished_times) {

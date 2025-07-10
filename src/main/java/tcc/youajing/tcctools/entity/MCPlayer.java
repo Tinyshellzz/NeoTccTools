@@ -14,4 +14,12 @@ public class MCPlayer {
         this.fished_times = fished_times;
         this.debris_mined = debris_mined;
     }
+
+    public UUID getUniqueId() {
+        return uuid;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

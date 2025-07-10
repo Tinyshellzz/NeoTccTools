@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import tcc.youajing.tcctools.TccTools;
 import tcc.youajing.tcctools.config.PluginConfig;
+import tcc.youajing.tcctools.services.MCPlayerManager;
 
 import java.util.Random;
 
@@ -50,7 +51,7 @@ public class PlayerJoinListener implements Listener {
         }
 
         // 创建玩家数据
-        mcPlayerMapper.update_player_name(player);
+        MCPlayerManager.update(player);
     }
 
     private Material getRandomBedColor() {

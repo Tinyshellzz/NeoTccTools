@@ -14,6 +14,7 @@ import tcc.youajing.tcctools.entity.MCPlayer;
 import tcc.youajing.tcctools.listener.*;
 import tcc.youajing.tcctools.placeholder.TccToolsExpansion;
 import tcc.youajing.tcctools.services.CancelSoundOfEnderDragonAndWither;
+import tcc.youajing.tcctools.services.MCPlayerManager;
 import tcc.youajing.tcctools.services.ToolsCommandService;
 
 import static tcc.youajing.tcctools.ObjectPool.mcPlayerMapper;
@@ -43,10 +44,7 @@ public class TccTools extends JavaPlugin {
         ObjectPool.placedDebrisMapper = new PlacedDebrisMapper();
         new CancelSoundOfEnderDragonAndWither(this);
 
-        @NotNull OfflinePlayer[] offlinePlayers = Bukkit.getOfflinePlayers();
-        for(OfflinePlayer offlinePlayer : offlinePlayers){
-            mcPlayerMapper.insert_player(new MCPlayer(offlinePlayer.getName(), offlinePlayer.getUniqueId(), 0, 0));
-        }
+        new MCPlayerManager();
     }
 
     public void register() {
