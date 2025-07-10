@@ -51,7 +51,7 @@ public class PlayerJoinListener implements Listener {
         }
 
         // 创建玩家数据
-        MCPlayerManager.update(player);
+        mcPlayerMapper.update_player_name(player);
     }
 
     private Material getRandomBedColor() {
